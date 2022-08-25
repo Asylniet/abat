@@ -852,7 +852,7 @@ iframe {
     height: 250px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .fs-800 {
     font-size: var(--fs-750);
   }
