@@ -29,3 +29,22 @@ projects.forEach((element) => {
     swiper.slideTo(1, 700, false);
   });
 });
+
+const swiper = new Swiper(".swiper-project", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 1,
+  
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-next-button",
+      prevEl: ".swiper-prev-button",
+    },
+  });
