@@ -31,7 +31,11 @@ const swiperStaff = new Swiper(".swiper-staff", {
     },
     1150: {
       slidesPerView: 3,
-      spaceBetween: 100,
+      spaceBetween: 20,
+    },
+    1400: {
+      slidesPerView: 4,
+      spaceBetween: 0,
     },
   },
   // Navigation arrows

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   // Buttons and highlights, main color of the site
@@ -24,8 +25,9 @@
 
   // Primary font styles
   // Made for the possible future changes in design
-  --ff-primary: "Montserrat", sans-serif;
-  --ff-header: var(--ff-primary);
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Montserrat", sans-serif;
+  --ff-header: var(--ff-secondary);
   --ff-body: var(--ff-primary);
 
   --fw-light: 300;
@@ -107,6 +109,14 @@
 
 .fs-500 {
   font-size: var(--fs-500);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
 }
 
 .fw-light {
@@ -219,7 +229,7 @@ section.container {
 }
 
 .address {
-  max-width: 34.375rem; // 550px
+  max-width: 59ch;
   min-width: 300px;
   gap: 0.625rem; // 10px
 }
@@ -267,7 +277,7 @@ nav {
     @include flex();
     a {
       @include flex();
-      padding: 1.5rem; // 24px
+      padding: 1.25rem 3.125rem; // 20px - 50px
       cursor: pointer;
       transition: 0.2s ease;
       color: inherit;
@@ -281,8 +291,17 @@ nav {
   }
 }
 
+#homepage,
+#servicesPage,
+.button,
+.title,
+.dark-staff .fw-bold {
+  font-family: var(--ff-secondary);
+}
+
 .hero {
   position: relative;
+  top: -1px;
   width: 100%;
   height: 43.75rem; // 700px
   color: var(--clr-neutral-400);
@@ -292,8 +311,10 @@ nav {
   background-image: url("/assets/images/hero-image.jpg");
   background-position: center center;
   background-size: cover;
-  .fs-900 {
+  .fs-900,
+  .fs-500 {
     max-width: 68.75rem; // 1100px
+    margin-inline: 20px;
   }
   &::after {
     background: radial-gradient(
@@ -319,7 +340,7 @@ nav {
 }
 
 .title.single {
-  margin: 0 0 40px 0;
+  margin: 0 0 2.5rem 0;
 }
 
 .title::after,
@@ -363,14 +384,15 @@ nav {
 
 .about-company .flex.column {
   flex: 3;
-  max-width: 43.75; // 700px
+  max-width: 43.75rem; // 700px
   gap: 1.25rem; // 20px;
 }
 
 .scrollable-text {
   min-width: 300px;
-  height: 350px;
-  max-height: 350px;
+  height: 21.875rem;
+  max-height: 21.875rem;
+  min-width: 318px;
   padding-right: 20px;
   overflow-y: scroll;
   color: var(--clr-accent-500);
@@ -400,15 +422,18 @@ nav {
 .swiper-images {
   margin-top: 20px;
   flex: 3;
-  height: calc(6rem + 440px);
+  height: calc(6rem + 21.875rem + 90px);
   min-width: 31.25rem;
 }
 
 .swiper-pagination {
-  bottom: 25px !important ;
+  bottom: 30px !important ;
 }
 
 .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0 5px !important;
   background: var(--clr-accent-400) !important;
   transition: 0.2s ease;
   &:hover {
@@ -431,7 +456,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 60px);
   background: var(--clr-primary-300);
   opacity: 0.25;
   z-index: 1;
@@ -442,7 +467,7 @@ nav {
   display: block;
   position: absolute;
   right: -50px;
-  bottom: 0px;
+  bottom: 10px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -456,7 +481,7 @@ nav {
 
 .swiper-images .swiper-slide img {
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 60px);
   object-fit: cover;
   filter: grayscale(100%);
 }
@@ -514,6 +539,12 @@ nav {
 .swiper.clients {
   width: 100%;
   height: 200px;
+  padding-bottom: 70px;
+  .swiper-slide {
+    @include flex();
+    margin: 0;
+    height: 100%;
+  }
   img {
     width: auto;
   }
@@ -567,6 +598,9 @@ nav {
     .fs-300 {
       color: var(--clr-neutral-300);
     }
+  }
+  img {
+    width: clamp(70px, 25%, 110px);
   }
 }
 
@@ -673,6 +707,7 @@ footer {
 }
 
 .button {
+  font-weight: var(--fw-bold);
   text-decoration: none;
   color: var(--clr-neutral-400);
   margin-top: 0.625rem;
@@ -688,10 +723,37 @@ footer {
 
 .back-section {
   width: 100%;
-  margin-top: 20px;
 }
 
 .main-info {
+  padding-bottom: 8.75rem;
+  gap: 10px;
+  .flex.column.flex-4:first-child {
+    flex: 3;
+  }
+  .flex.column.flex-4 {
+    justify-content: flex-start;
+    position: relative;
+    flex: 4;
+    height: 100%;
+    min-width: 300px;
+  }
+  .flex.column {
+    .flex-1 {
+      flex: 1;
+      min-height: 100px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .flex-4 {
+      flex: 4;
+    }
+  }
+  img {
+    width: 26.875rem;
+    height: 26.875rem;
+    border-radius: 50%;
+  }
   .fs-100:not(.fw-light) {
     padding: 10px 0;
     &::before {
@@ -715,15 +777,9 @@ footer {
 }
 
 .info-section {
+  width: 100%;
   align-items: flex-start;
-  margin-top: 1.25rem;
-  gap: 3.25rem;
-  padding: 4.375rem 0;
-  img {
-    width: 26.875rem;
-    height: 26.875rem;
-    border-radius: 50%;
-  }
+  justify-content: flex-start;
   .gradient-line {
     position: relative;
     margin-bottom: 3rem;
@@ -745,27 +801,32 @@ footer {
   }
   ul {
     list-style: none; /* Remove default bullets */
-    padding-left: 1rem;
     li {
       margin: 15px 0;
-      max-width: 50ch;
+      max-width: 51ch;
       ul li {
         color: var(--clr-accent-400);
         font-weight: var(--fw-light);
         &::before {
+          content: "\2022";
           color: var(--clr-accent-1000);
+          background: none;
+          margin-left: 30px;
         }
       }
     }
   }
 
   ul li::before {
-    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: var(--clr-primary-400); /* Change the color */
-    font-weight: var(--fw-bold); /* If you want it to be bold */
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    background: var(--clr-primary-400); /* Change the color */
+    // font-weight: var(--fw-bold); /* If you want it to be bold */
     display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1rem; /* Also needed for space (tweak if needed) */
-    margin-left: -1rem; /* Also needed for space (tweak if needed) */
+    // width: 1rem; /* Also needed for space (tweak if needed) */
+    margin-right: 10px; /* Also needed for space (tweak if needed) */
   }
   .about,
   .additional-info {
@@ -815,11 +876,13 @@ footer {
     box-shadow: 0 5px 10px var(--clr-primary-300);
   }
   .flex.wrap {
-    gap: 2.375rem;
+    gap: 1.25rem;
     .flex.column {
       min-width: 300px;
+      max-width: 350px;
       flex: 1;
       gap: 15px;
+      text-align: center;
     }
   }
   img {
@@ -866,6 +929,7 @@ footer {
     min-width: 18.75rem;
     max-width: 27.1875rem;
     border-radius: 3.125rem;
+    object-fit: cover;
   }
 }
 
@@ -939,7 +1003,7 @@ iframe {
   min-height: 300px;
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1400px) {
   .swiper-staff {
     .swiper-next-button,
     .swiper-prev-button {
@@ -948,24 +1012,42 @@ iframe {
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1500px) {
   html {
     font-size: 14px;
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1400px) {
+  .swiper-staff {
+    .swiper-next-button {
+      right: 20px;
+    }
+    .swiper-prev-button {
+      left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
   html {
     font-size: 12px;
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 1125px) {
+  .hero .fs-900 {
+    font-size: 3.5rem;
+  }
   header {
     height: 80px;
     overflow: hidden;
     position: relative;
     transition: 0.5s ease;
+    img:not(.logo) {
+      width: 20px;
+      margin-right: 10px;
+    }
   }
 
   header.opened {
@@ -1063,18 +1145,29 @@ iframe {
   }
   .title {
     --after-size: 2rem;
-    --before-size: 3rem;
+    --before-size: 2.5rem;
     &::before {
-      top: calc(var(--before-size) * -1 + 15px);
-      left: calc(var(--before-size) * -1);
+      top: calc(var(--before-size) * -1 + 10px);
+      left: calc(var(--before-size) * -1 - 10px);
     }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .swiper:not(.clients) {
+  .swiper-images {
     min-width: 300px;
     height: 250px;
+  }
+  .swiper-images {
+    .swiper-next-button {
+      right: 40%;
+    }
+    .swiper-prev-button {
+      left: 40%;
+    }
+  }
+  .fs-900 {
+    font-size: 3rem;
   }
 }
 
@@ -1082,15 +1175,22 @@ iframe {
   .fs-800 {
     font-size: var(--fs-750);
   }
-  .fs-900 {
-    font-size: 4rem;
+  .hero .fs-900 {
+    font-size: 2.5rem;
+  }
+  .hero .fs-500 {
+    font-size: 1.3rem;
   }
   .title {
     --after-size: 1.5rem;
-    --before-size: 2rem;
+    --before-size: 1.8rem;
     &::before {
-      top: calc(var(--before-size) * -1 + 15px);
-      left: calc(var(--before-size) * -1);
+      top: calc(var(--before-size) * -1 + 5px);
+      left: calc(var(--before-size) * -1 - 5px);
+    }
+    &:not(.single)::after {
+      bottom: calc((var(--after-size) * -1) + 25px);
+      right: calc((var(--after-size) * -1) + 10px);
     }
   }
 }
