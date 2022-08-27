@@ -278,7 +278,8 @@ nav ul a.selected {
 #servicesPage,
 .button,
 .title,
-.dark-staff .fw-bold {
+.dark-staff .fw-bold,
+.projects-footer {
   font-family: var(--ff-secondary);
 }
 
@@ -396,6 +397,10 @@ nav ul a.selected {
   background: var(--clr-primary-600);
 }
 
+.swiper-slide {
+  overflow: hidden;
+}
+
 .swiper-images {
   margin-top: 20px;
   flex: 3;
@@ -420,10 +425,6 @@ nav ul a.selected {
 
 .swiper-pagination-bullet-active {
   background: var(--clr-primary-400) !important;
-}
-
-.swiper-slide {
-  overflow: hidden;
 }
 
 .swiper-images .swiper-slide::before {
@@ -763,8 +764,7 @@ footer .flex {
   position: absolute;
   bottom: -1.5rem;
   left: 0;
-  width: 100%;
-  max-width: 330px;
+  width: 20.625rem;
   height: 0.625rem;
   border-radius: 1.25rem;
   background: linear-gradient(90deg, var(--clr-primary-300) 4.53%, var(--clr-primary-100) 97.28%);
@@ -808,35 +808,7 @@ footer .flex {
 }
 
 .dark-staff {
-  position: relative;
-  background: var(--clr-accent-800);
-  color: var(--clr-neutral-400);
-  padding: 4.375rem 0;
   gap: 1.5rem;
-}
-.dark-staff::after, .dark-staff::before {
-  content: "";
-  position: absolute;
-}
-.dark-staff::after {
-  width: 3%;
-  aspect-ratio: 77/158;
-  bottom: 3%;
-  left: 0;
-  background: url("/assets/images/bg-staff-bottom.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-width: 40px;
-}
-.dark-staff::before {
-  width: 4%;
-  aspect-ratio: 147/295;
-  min-width: 60px;
-  top: 5%;
-  right: 0;
-  background: url("/assets/images/bg-staff-top.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .dark-staff .button:hover {
   box-shadow: 0 5px 10px var(--clr-primary-300);
@@ -853,6 +825,42 @@ footer .flex {
 }
 .dark-staff img {
   border-radius: 50%;
+}
+
+.dsrk-staff,
+.projects-footer {
+  background: var(--clr-accent-800);
+  color: var(--clr-neutral-400);
+  padding: 4.375rem 0;
+  position: relative;
+}
+.dsrk-staff::after, .dsrk-staff::before,
+.projects-footer::after,
+.projects-footer::before {
+  content: "";
+  position: absolute;
+}
+.dsrk-staff::after,
+.projects-footer::after {
+  width: 3%;
+  aspect-ratio: 77/158;
+  bottom: 3%;
+  left: 0;
+  background: url("/assets/images/bg-staff-bottom.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 40px;
+}
+.dsrk-staff::before,
+.projects-footer::before {
+  width: 4%;
+  aspect-ratio: 147/295;
+  min-width: 60px;
+  top: 5%;
+  right: 0;
+  background: url("/assets/images/bg-staff-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .sertificates {
@@ -901,31 +909,6 @@ footer .flex {
 
 .contacts {
   padding: 8.75rem 0;
-  position: relative;
-}
-.contacts::after, .contacts::before {
-  content: "";
-  position: absolute;
-}
-.contacts::after {
-  width: 8%;
-  aspect-ratio: 1/1;
-  bottom: 0;
-  left: 0;
-  background: url("/assets/images/bg-sertificates-top.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: rotate(-90deg);
-}
-.contacts::before {
-  width: 4%;
-  aspect-ratio: 124/236;
-  top: 5%;
-  min-width: 60px;
-  right: 0;
-  background: url("/assets/images/bg-contacts-top.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .contacts .flex.wrap {
   align-items: stretch;
@@ -966,6 +949,100 @@ iframe {
   min-width: 300px;
   border-radius: 50px;
   min-height: 300px;
+}
+
+.projects .flex.wrap {
+  width: 100%;
+  position: relative;
+  gap: 2.5rem;
+  padding: 70px 0;
+}
+
+.project-container {
+  position: relative;
+  flex: 1, 1;
+  min-width: 300px;
+  width: 27.5rem;
+  max-width: 440px;
+  transition: 0.2s ease;
+}
+.project-container .flex.spb {
+  margin-top: 1.56rem;
+}
+.project-container:hover {
+  transform: translate(0, -5px);
+}
+
+.swiper-projects {
+  width: 100% !important;
+  height: 270px;
+  border-radius: 1.25rem;
+  cursor: pointer;
+}
+.swiper-projects .swiper-slide {
+  width: 100% !important;
+}
+.swiper-projects img {
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.projects-footer .flex.column.start {
+  max-width: 130ch;
+  gap: 30px;
+}
+.projects-footer .fw-bold {
+  margin-bottom: 10px;
+}
+
+.contacts,
+.projects {
+  position: relative;
+}
+.contacts::after, .contacts::before,
+.projects::after,
+.projects::before {
+  content: "";
+  position: absolute;
+}
+.contacts::after,
+.projects::after {
+  width: 8%;
+  aspect-ratio: 1/1;
+  bottom: 0;
+  left: 0;
+  background: url("/assets/images/bg-sertificates-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(-90deg);
+}
+.contacts::before,
+.projects::before {
+  width: 4%;
+  aspect-ratio: 124/236;
+  top: 5%;
+  min-width: 60px;
+  right: 0;
+  background: url("/assets/images/bg-contacts-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.projects::after {
+  width: 4%;
+  bottom: 60%;
+  background: url("/assets/images/bg-clients-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 55/111;
+  transform: rotate(0);
+}
+.projects::before {
+  width: 6%;
+  top: 60%;
 }
 
 @media screen and (min-width: 1400px) {
