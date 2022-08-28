@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script src="/js/header.js" type="text/javascript" defer></script>
     <script src="/js/footer.js" type="text/javascript" defer></script>
     <title>Контакты</title>
@@ -17,10 +19,11 @@
       <section class="flex contacts">
         <div class="container flex spb wrap">
           <div class="flex column start">
-            <div class="fs-800 fw-bold title">Контакты</div>
+            <div class="fs-800 fw-bold title" data-aos="zoom-in">Контакты</div>
             <a
               class="flex fs-300"
               href="mailto: technical.assistant@abat-tesc.kz"
+              data-aos="fade-up" data-aos-delay="100"
             >
               <svg
                 width="20"
@@ -36,7 +39,7 @@
               </svg>
               <span> technical.assistant@abat-tesc.kz </span>
             </a>
-            <a class="flex tel fs-300" href="tel:+7 771 100 55 66">
+            <a class="flex tel fs-300" href="tel:+7 771 100 55 66" data-aos="fade-up" data-aos-delay="200">
               <svg
                 width="35"
                 height="35"
@@ -51,7 +54,7 @@
               </svg>
               <span> +7 771 100 55 66 </span>
             </a>
-            <a class="flex fs-300" href="mailto: info@abat-tesc.kz">
+            <a class="flex fs-300" href="mailto: info@abat-tesc.kz" data-aos="fade-up" data-aos-delay="300">
               <svg
                 width="20"
                 height="20"
@@ -66,7 +69,7 @@
               </svg>
               <span> info@abat-tesc.kz </span>
             </a>
-            <a class="flex tel fs-300" href="tel:+7 771 100 55 77">
+            <a class="flex tel fs-300" href="tel:+7 771 100 55 77" data-aos="fade-up" data-aos-delay="400">
               <svg
                 width="35"
                 height="35"
@@ -81,7 +84,7 @@
               </svg>
               <span> +7 771 100 55 77 </span>
             </a>
-            <div class="flex column start footer-address">
+            <div class="flex column start footer-address" data-aos="fade-up" data-aos-delay="500">
               <div class="fs-500 fw-medium">Адреса</div>
               <div class="flex address start">
                 <img src="/assets/icons/place.svg" alt="Адрес" />
@@ -98,10 +101,13 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
+            data-aos="fade-up" data-aos-delay="700"
           ></iframe>
         </div>
       </section>
     </main>
     <footer-component></footer-component>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

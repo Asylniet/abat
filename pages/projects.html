@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -22,9 +24,9 @@
     <main>
       <section class="flex column projects">
         <div class="container flex column">
-          <div class="fs-800 fw-bold title">Проекты</div>
+          <div class="fs-800 fw-bold title" data-aos="zooom-in">Проекты</div>
           <div class="flex wrap">
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="100">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -57,7 +59,7 @@
                 <button-component href="/pages/projectPage.html"></button-component>
               </div>
             </div>
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="200">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -90,7 +92,7 @@
                 <button-component href="#"></button-component>
               </div>
             </div>
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="300">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -123,7 +125,7 @@
                 <button-component href="#"></button-component>
               </div>
             </div>
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="400">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -156,7 +158,7 @@
                 <button-component href="#"></button-component>
               </div>
             </div>
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="500">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -189,7 +191,7 @@
                 <button-component href="#"></button-component>
               </div>
             </div>
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="600">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -222,7 +224,7 @@
                 <button-component href="#"></button-component>
               </div>
             </div>
-            <div class="project-container">
+            <div class="project-container" data-aos="fade-up" data-aos-delay="700">
               <div class="swiper-projects">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -260,12 +262,12 @@
       </section>
       <section class="projects-footer flex">
         <div class="container flex column start">
-          <div class="fw-bold fs-500">Классификационное общество</div>
-          <div class="fs-200">
+          <div class="fw-bold fs-500" data-aos="fade-right" data-aos-delay="100">Классификационное общество</div>
+          <div class="fs-200" data-aos="fade-right" data-aos-delay="200">
             Классификационное общество, орган технического надзора в
             судостроении и мореплавании.
           </div>
-          <div class="fs-200">
+          <div class="fs-200" data-aos="fade-right" data-aos-delay="300">
             Устанавливает технические требования в отношении обеспечения
             безопасности плавания гражданских судов, надежности перевозки грузов
             и охраны человеческой жизни; рассматривает проектную и техническую
@@ -275,7 +277,7 @@
             классифицирует суда, присваивает им класс или снимает его, изучает
             аварии судов; ведет учет поднадзорных судов;
           </div>
-          <div class="fs-200">
+          <div class="fs-200" data-aos="fade-right" data-aos-delay="400">
             Присвоение судну класса Классификационным обществом, удостоверяемое
             свидетельством, означает гарантию технической надежности судна и
             обеспечивает судовладельцу более выгодные условия страхования судна
@@ -287,5 +289,7 @@
     <footer-component></footer-component>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/projects.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

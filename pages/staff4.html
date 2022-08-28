@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script src="/js/header.js"></script>
     <script src="/js/footer.js"></script>
   </head>
@@ -15,7 +17,7 @@
     <header-component path="staff"></header-component>
     <main>
       <section class="flex container main-info wrap start">
-        <div class="flex column flex-4">
+        <div class="flex column flex-4" data-aos="fade-right">
           <div class="flex back-section start flex-1">
             <a href="/pages/staff.html" class="flex back-button">
               <svg
@@ -44,34 +46,34 @@
           <div class="flex-1"></div>
           <div class="flex wrap info-section flex-4">
             <div class="flex column start">
-              <div class="fs-700 fw-medium gradient-line">Никита Попов</div>
+              <div class="fs-700 fw-medium gradient-line" data-aos="fade-up" data-aos-delay="100">Никита Попов</div>
               <div class="flex fs-300 start about">
                 <div class="flex column fw-light start">
-                  <div>Должность:</div>
-                  <div>Стаж работы:</div>
+                  <div data-aos="fade-up" data-aos-delay="200">Должность:</div>
+                  <div data-aos="fade-up" data-aos-delay="250">Стаж работы:</div>
                 </div>
                 <div class="flex column fw-medium start">
-                  <div class="clr-primary-300">Инженер-технолог</div>
-                  <div>в сфере судоремонта и судостроения более 11 лет</div>
+                  <div class="clr-primary-300" data-aos="fade-up" data-aos-delay="300">Инженер-технолог</div>
+                  <div data-aos="fade-up" data-aos-delay="400">в сфере судоремонта и судостроения более 11 лет</div>
                 </div>
               </div>
-              <div class="fs-500 fw-medium">Опыт работы:</div>
+              <div class="fs-500 fw-medium" data-aos="fade-up" data-aos-delay="450">Опыт работы:</div>
               <ul class="fs-300">
-                <li>
+                <li data-aos="fade-up" data-aos-delay="500">
                   Главным конструктором, ведущим инженерконструктором и мастером
                   корпусно-сварочного цеха в Филиале АО «Енисейское речное
                   пароходство» инженер-конструктором 1й категории в ОАО
                 </li>
-                <li>Судостроительный завод «Северная Верфь»</li>
+                <li data-aos="fade-up" data-aos-delay="550">Судостроительный завод «Северная Верфь»</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
       <section class="dark-staff flex column">
-        <div class="fs-600 fw-bold">Наша команда</div>
+        <div class="fs-600 fw-bold" data-aos="zoom-in">Наша команда</div>
         <div class="flex wrap container">
-          <div class="flex column">
+          <div class="flex column" data-aos="fade-up" data-aos-delay="100">
             <img src="/assets/images/avatar2.jpg" alt="Муратбек Байнеке" />
             <div class="fs-500">Муратбек Байнеке</div>
             <div class="fs-300 fw-light">Генеральный директор</div>
@@ -90,7 +92,7 @@
                 /></svg
             ></a>
           </div>
-          <div class="flex column">
+          <div class="flex column" data-aos="fade-up" data-aos-delay="200">
             <img src="/assets/images/avatar3.jpg" alt="Нурхат Ермаганбетов" />
             <div class="fs-500">Нурхат Ермаганбетов</div>
             <div class="fs-300 fw-light">Административный директор</div>
@@ -110,7 +112,7 @@
             ></a>
           </div>
 
-          <div class="flex column">
+          <div class="flex column" data-aos="fade-up" data-aos-delay="300">
             <img src="/assets/images/avatar1.jpg" alt="Темирболат Иса" />
             <div class="fs-500">Темирболат Иса</div>
             <div class="fs-300 fw-light">Технический директор</div>
@@ -133,5 +135,7 @@
       </section>
     </main>
     <footer-component></footer-component>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

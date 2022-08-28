@@ -5,7 +5,7 @@ class Footer extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <footer class="flex">
+      <footer class="flex" data-aos="zoom-in">
       <div class="container flex spb start wrap fs-200">
         <div class="flex column start">
           <a href="/">О компании</a>
@@ -26,7 +26,7 @@ class Footer extends HTMLElement {
             </div>
           </div>
         </div>
-        <div class="flex column start">
+        <div class="flex column start footer-contacts">
           <div class="footer-big">Контакты</div>
           <a class="flex" href="mailto: info@abat-tesc.kz">
             <svg

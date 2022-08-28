@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script src="/js/header.js"></script>
     <script src="/js/footer.js"></script>
   </head>
@@ -15,10 +17,10 @@
     <header-component path="staff"></header-component>
     <main>
       <section class="container flex column staff">
-        <div class="title fs-800 fw-bold"><span>Наша</span> команда</div>
+        <div class="title fs-800 fw-bold" data-aos="zoom-in"><span>Наша</span> команда</div>
         <div class="flex wrap staff-wrapper">
           <div class="flex wrap">
-            <div class="flex column">
+            <div class="flex column" data-aos="fade-up" data-aos-delay="100">
               <img src="/assets/images/avatar1.jpg" alt="Темирболат Иса" />
               <div class="fs-500">Темирболат Иса</div>
               <div class="fs-300 fw-light">Технический директор</div>
@@ -38,7 +40,7 @@
               ></a>
             </div>
 
-            <div class="flex column">
+            <div class="flex column" data-aos="fade-up" data-aos-delay="200">
               <img src="/assets/images/avatar2.jpg" alt="Муратбек Байнеке" />
               <div class="fs-500">Муратбек Байнеке</div>
               <div class="fs-300 fw-light">Генеральный директор</div>
@@ -59,7 +61,7 @@
             </div>
           </div>
 
-          <div class="flex wrap">
+          <div class="flex wrap" data-aos="fade-up" data-aos-delay="300">
             <div class="flex column">
               <img src="/assets/images/avatar3.jpg" alt="Нурхат Ермаганбетов" />
               <div class="fs-500">Нурхат Ермаганбетов</div>
@@ -80,7 +82,7 @@
               ></a>
             </div>
 
-            <div class="flex column">
+            <div class="flex column" data-aos="fade-up" data-aos-delay="400">
               <img src="/assets/images/avatar4.jpg" alt="Никита Попов" />
               <div class="fs-500">Никита Попов</div>
               <div class="fs-300 fw-light">Инженер-технолог</div>
@@ -104,5 +106,7 @@
       </section>
     </main>
     <footer-component></footer-component>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

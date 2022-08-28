@@ -12,6 +12,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script src="js/header.js" type="text/javascript" defer></script>
     <script src="js/footer.js" type="text/javascript" defer></script>
     <title>Abat</title>
@@ -20,13 +22,13 @@
     <header-component path="index"></header-component>
     <main id="homepage">
       <section class="hero flex column">
-        <div class="fs-900 fw-medium">
+        <div class="fs-900 fw-medium" data-aos="zoom-in" data-aos-delay="500">
           ABAT Total Engineering Services & Consulting
         </div>
-        <div class="fs-500">Полный спектр оперирования морских судов</div>
+        <div class="fs-500" data-aos="zoom-in" data-aos-delay="700">Полный спектр оперирования морских судов</div>
       </section>
       <section class="about-company flex container wrap">
-        <div class="flex column start">
+        <div class="flex column start" data-aos="fade-right">
           <div class="fs-800 fw-bold title single"><span>О</span> компании</div>
           <div class="flex column start scrollable-text">
             <span class="fs-500">
@@ -65,7 +67,7 @@
             </div>
           </div>
         </div>
-        <div class="swiper swiper-images">
+        <div class="swiper swiper-images" data-aos="fade-left">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
@@ -118,9 +120,9 @@
       </section>
       <section class="pros flex">
         <div class="container flex column start">
-          <div class="fs-800 fw-bold">Наши преимущества</div>
+          <div class="fs-800 fw-bold" data-aos="zoom-in">Наши преимущества</div>
           <div class="flex start wrap">
-            <div class="flex column start">
+            <div class="flex column start" data-aos="fade-up" data-aos-delay="100">
               <img src="/assets/images/pros1.png" alt="Спектр Услуг" />
               <div class="fw-bold fs-500">Широкий спектр услуг</div>
               <div class="fs-300">
@@ -129,7 +131,7 @@
               </div>
             </div>
 
-            <div class="flex column start">
+            <div class="flex column start" data-aos="fade-up" data-aos-delay="200">
               <img src="/assets/images/pros2.png" alt="Спектр Услуг" />
               <div class="fw-bold fs-500">Профессионализм</div>
               <div class="fs-300">
@@ -138,7 +140,7 @@
               </div>
             </div>
 
-            <div class="flex column start">
+            <div class="flex column start" data-aos="fade-up" data-aos-delay="300">
               <img src="/assets/images/pros3.png" alt="Спектр Услуг" />
               <div class="fw-bold fs-500">Работа 24/7</div>
               <div class="fs-300">
@@ -146,7 +148,7 @@
               </div>
             </div>
 
-            <div class="flex column start">
+            <div class="flex column start" data-aos="fade-up" data-aos-delay="400">
               <img src="/assets/images/pros4.png" alt="Спектр Услуг" />
               <div class="fw-bold fs-500">Доступный и качественный сервис</div>
               <div class="fs-300">
@@ -155,7 +157,7 @@
               </div>
             </div>
 
-            <div class="flex column start">
+            <div class="flex column start" data-aos="fade-up" data-aos-delay="500">
               <img src="/assets/images/pros5.png" alt="Спектр Услуг" />
               <div class="fw-bold fs-500">
                 Индивидуальный подход к каждому клиенту
@@ -166,7 +168,7 @@
               </div>
             </div>
 
-            <div class="flex column start">
+            <div class="flex column start" data-aos="fade-up" data-aos-delay="600">
               <img src="/assets/images/pros6.png" alt="Спектр Услуг" />
               <div class="fw-bold fs-500">Надежность и ответственность</div>
               <div class="fs-300">
@@ -178,28 +180,28 @@
         </div>
       </section>
       <section class="flex column container staff">
-        <div class="fs-750 fw-bold">Наша команда</div>
+        <div class="fs-750 fw-bold" data-aos="zoom-in">Наша команда</div>
         <div class="swiper swiper-staff">
           <div class="swiper-wrapper">
-            <div class="swiper-slide flex column">
+            <div class="swiper-slide flex column" data-aos="fade-up" data-aos-delay="100">
               <img src="/assets/images/avatar1.jpg" alt="Темирболат Иса" />
               <div class="fs-500">Темирболат Иса</div>
               <div class="fs-300 fw-light">Технический директор</div>
             </div>
 
-            <div class="swiper-slide flex column">
+            <div class="swiper-slide flex column" data-aos="fade-up" data-aos-delay="200">
               <img src="/assets/images/avatar2.jpg" alt="Муратбек Байнеке" />
               <div class="fs-500">Муратбек Байнеке</div>
               <div class="fs-300 fw-light">Генеральный директор</div>
             </div>
 
-            <div class="swiper-slide flex column">
+            <div class="swiper-slide flex column" data-aos="fade-up" data-aos-delay="300">
               <img src="/assets/images/avatar3.jpg" alt="Нурхат Ермаганбетов" />
               <div class="fs-500">Нурхат Ермаганбетов</div>
               <div class="fs-300 fw-light">Административный директор</div>
             </div>
 
-            <div class="swiper-slide flex column">
+            <div class="swiper-slide flex column" data-aos="fade-up" data-aos-delay="400">
               <img src="/assets/images/avatar4.jpg" alt="Никита Попов" />
               <div class="fs-500">Никита Попов</div>
               <div class="fs-300 fw-light">Инженер-технолог</div>
@@ -239,5 +241,7 @@
     <footer-component></footer-component>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

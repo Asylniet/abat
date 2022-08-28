@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script src="/js/header.js"></script>
     <script src="/js/footer.js"></script>
   </head>
@@ -15,7 +17,7 @@
     <header-component path="staff"></header-component>
     <main>
       <section class="flex container main-info wrap start">
-        <div class="flex column flex-4">
+        <div class="flex column flex-4" data-aos="fade-right">
           <div class="flex back-section start flex-1">
             <a href="/pages/staff.html" class="flex back-button">
               <svg
@@ -40,31 +42,31 @@
           <div class="flex-1"></div>
           <div class="flex wrap info-section flex-4">
             <div class="flex column start">
-              <div class="fs-700 fw-medium gradient-line">Нурхат Ермаганбетов</div>
+              <div class="fs-700 fw-medium gradient-line" data-aos="fade-up" data-aos-delay="100">Нурхат Ермаганбетов</div>
               <div class="flex fs-300 start about">
                 <div class="flex column fw-light start">
-                  <div>Должность:</div>
-                  <div>Стаж работы:</div>
+                  <div data-aos="fade-up" data-aos-delay="200">Должность:</div>
+                  <div data-aos="fade-up" data-aos-delay="250">Стаж работы:</div>
                 </div>
                 <div class="flex column fw-medium start">
-                  <div class="clr-primary-300">Административный директор</div>
-                  <div>более 16 лет в сфере мореплавания</div>
+                  <div class="clr-primary-300" data-aos="fade-up" data-aos-delay="300">Административный директор</div>
+                  <div data-aos="fade-up" data-aos-delay="350">более 16 лет в сфере мореплавания</div>
                 </div>
               </div>
-              <div class="fs-500 fw-medium">Опыт работы:</div>
+              <div class="fs-500 fw-medium" data-aos="fade-up" data-aos-delay="400">Опыт работы:</div>
               <ul class="fs-300">
-                <li>директором морского департамента и начальника отдела </li>
-                <li>безопасности мореплавания  в «КАПЭ»</li>
-                <li>капитана судов
+                <li data-aos="fade-up" data-aos-delay="500">директором морского департамента и начальника отдела </li>
+                <li data-aos="fade-up" data-aos-delay="550">безопасности мореплавания  в «КАПЭ»</li>
+                <li data-aos="fade-up" data-aos-delay="600"> капитана судов
                   <ul>
-                      <li>SA Jet1, SA Jet2 в компании «SemArco»</li>
-                      <li>SМ Jet2, SМ Jet5  в «Caspian MainPort Aktau»</li>
+                      <li data-aos="fade-up" data-aos-delay="650">SA Jet1, SA Jet2 в компании «SemArco»</li>
+                      <li data-aos="fade-up" data-aos-delay="700">SМ Jet2, SМ Jet5  в «Caspian MainPort Aktau»</li>
                   </ul>
                 </li>
-                <li>старшего помощника капитана на судах
+                <li data-aos="fade-up" data-aos-delay="750">старшего помощника капитана на судах
                   <ul>
-                      <li>CM Service, CM Kuryk</li>
-                      <li>CM  Surveyor, CM MEHRAN </li>
+                      <li data-aos="fade-up" data-aos-delay="800">CM Service, CM Kuryk</li>
+                      <li data-aos="fade-up" data-aos-delay="850">CM  Surveyor, CM MEHRAN </li>
                   </ul>
                 </li>
               </ul>
@@ -73,9 +75,9 @@
         </div>
       </section>
       <section class="dark-staff flex column">
-        <div class="fs-600 fw-bold">Наша команда</div>
+        <div class="fs-600 fw-bold" data-aos="zoom-in">Наша команда</div>
         <div class="flex wrap container">
-          <div class="flex column">
+          <div class="flex column" data-aos="fade-up" data-aos-delay="100">
             <img src="/assets/images/avatar1.jpg" alt="Темирболат Иса" />
             <div class="fs-500">Темирболат Иса</div>
             <div class="fs-300 fw-light">Технический директор</div>
@@ -95,7 +97,7 @@
             ></a>
           </div>
 
-          <div class="flex column">
+          <div class="flex column" data-aos="fade-up" data-aos-delay="200">
             <img src="/assets/images/avatar4.jpg" alt="Никита Попов" />
             <div class="fs-500">Никита Попов</div>
             <div class="fs-300 fw-light">Инженер-технолог</div>
@@ -115,7 +117,7 @@
             ></a>
           </div>
 
-          <div class="flex column">
+          <div class="flex column" data-aos="fade-up" data-aos-delay="300">
               <img src="/assets/images/avatar2.jpg" alt="Муратбек Байнеке" />
               <div class="fs-500">Муратбек Байнеке</div>
               <div class="fs-300 fw-light">Генеральный директор</div>
@@ -139,5 +141,7 @@
       </section>
     </main>
     <footer-component></footer-component>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

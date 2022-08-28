@@ -167,7 +167,7 @@ html {
 
 html,
 body {
-  height: 100%;
+  // height: 100%;
   font-family: var(--ff-body);
   overflow-x: hidden;
 }
@@ -665,6 +665,9 @@ footer {
   a {
     color: var(--clr-neutral-400);
   }
+  a {
+    height: 1.6rem;
+  }
   a:hover {
     color: var(--clr-primary-100);
     svg path {
@@ -887,12 +890,15 @@ footer {
       min-width: 300px;
       max-width: 350px;
       flex: 1;
-      gap: 10px;
       text-align: center;
+      img {
+        margin-bottom: 0.625rem;
+        border-radius: 50%;
+      }
+      .button {
+        margin-top: 1rem;
+      }
     }
-  }
-  img {
-    border-radius: 50%;
   }
 }
 

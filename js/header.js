@@ -6,9 +6,9 @@ class Header extends HTMLElement {
   connectedCallback() {
     const path = this.getAttribute("path");
     this.innerHTML = `
-      <header class="header-primary flex column">
+      <header class="header-primary flex column" data-aos="fade-up">
       <div class="container">
-        <div class="sub-header flex spb">
+        <div class="sub-header flex spb" data-aos="fade-up">
           <a href="#">
             <img src="/assets/images/logo.png" alt="Abat" class="logo" />
           </a>
@@ -32,7 +32,7 @@ class Header extends HTMLElement {
       </div>
       <nav class="flex">
         <div class="container">
-          <ul role="list">
+          <ul role="list" data-aos="fade-up">
             <a href="/" class="${path === "index" && "selected"}">О компании</a>
             <a href="/pages/services.html" class="${
               path === "services" && "selected"

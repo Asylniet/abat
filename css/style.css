@@ -142,7 +142,6 @@ html {
 
 html,
 body {
-  height: 100%;
   font-family: var(--ff-body);
   overflow-x: hidden;
 }
@@ -642,6 +641,9 @@ footer,
 footer a {
   color: var(--clr-neutral-400);
 }
+footer a {
+  height: 1.6rem;
+}
 footer a:hover {
   color: var(--clr-primary-100);
 }
@@ -856,11 +858,14 @@ footer .flex {
   min-width: 300px;
   max-width: 350px;
   flex: 1;
-  gap: 10px;
   text-align: center;
 }
-.dark-staff img {
+.dark-staff .flex.wrap .flex.column img {
+  margin-bottom: 0.625rem;
   border-radius: 50%;
+}
+.dark-staff .flex.wrap .flex.column .button {
+  margin-top: 1rem;
 }
 
 .dark-staff,

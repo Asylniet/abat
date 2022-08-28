@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -21,7 +23,7 @@
     <main>
       <section class="flex main-info projects">
         <div class="container flex wrap gap40 start">
-          <div class="flex column flex-4">
+          <div class="flex column flex-4" data-aos="fade-right">
             <div class="flex back-section start flex-1">
               <a href="/pages/projects.html" class="flex back-button">
                 <svg
@@ -126,17 +128,18 @@
             <div class="flex-1 empty"></div>
             <div class="flex wrap info-section flex-4">
               <div class="flex column start">
-                <div class="fs-700 fw-medium gradient-line flex">
+                <div class="fs-700 fw-medium gradient-line flex" data-aos="fade-up" data-aos-delay="200">
                   <img
                     src="/assets/images/kz-flag.jpg"
                     alt="Flag"
                     class="flag"
+                    data-aos="fade-up" data-aos-delay="100"
                   />ALFIOS
                 </div>
                 <div class="flex fs-300 start about column">
                   <div class="flex fw-light start">
-                    <div style="min-width: 120px">Тип судна:</div>
-                    <div class="clr-primary-300 fs-300 fw-medium">
+                    <div style="min-width: 120px" data-aos="fade-up" data-aos-delay="300">Тип судна:</div>
+                    <div class="clr-primary-300 fs-300 fw-medium" data-aos="fade-up" data-aos-delay="350">
                       Плавучий кран, для проведения монтажных работ при
                       дноуглубительных работах на шельфе
                     </div>
@@ -149,8 +152,8 @@
                     </div>
                   </div> -->
                 </div>
-                <div class="fs-500 fw-medium">Проделанные работы:</div>
-                <div class="fs-300" style="margin-top: 20px">
+                <div class="fs-500 fw-medium" data-aos="fade-up" data-aos-delay="400">Проделанные работы:</div>
+                <div class="fs-300" style="margin-top: 20px" data-aos="fade-up" data-aos-delay="450">
                   Частичная замена корпуса, пескоструйная очистка корпуса до
                   уровня SA2, покраска и сдача объекта Клиенту (Заказчику) и
                   классификационному обществу
@@ -164,5 +167,7 @@
     <footer-component></footer-component>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/projects.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
