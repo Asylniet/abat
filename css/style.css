@@ -208,7 +208,7 @@ section.container {
 }
 
 .address {
-  max-width: 59ch;
+  max-width: 66ch;
   min-width: 300px;
   gap: 0.625rem;
 }
@@ -850,33 +850,33 @@ footer .flex {
   box-shadow: 0 5px 10px var(--clr-primary-300);
 }
 .dark-staff .flex.wrap {
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 .dark-staff .flex.wrap .flex.column {
   min-width: 300px;
   max-width: 350px;
   flex: 1;
-  gap: 15px;
+  gap: 10px;
   text-align: center;
 }
 .dark-staff img {
   border-radius: 50%;
 }
 
-.dsrk-staff,
+.dark-staff,
 .projects-footer {
   background: var(--clr-accent-800);
   color: var(--clr-neutral-400);
   padding: 4.375rem 0;
   position: relative;
 }
-.dsrk-staff::after, .dsrk-staff::before,
+.dark-staff::after, .dark-staff::before,
 .projects-footer::after,
 .projects-footer::before {
   content: "";
   position: absolute;
 }
-.dsrk-staff::after,
+.dark-staff::after,
 .projects-footer::after {
   width: 3%;
   aspect-ratio: 77/158;
@@ -887,7 +887,7 @@ footer .flex {
   background-size: cover;
   min-width: 40px;
 }
-.dsrk-staff::before,
+.dark-staff::before,
 .projects-footer::before {
   width: 4%;
   aspect-ratio: 147/295;
@@ -935,12 +935,13 @@ footer .flex {
           clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 .sertificates img {
-  flex: 1;
+  flex: 1, 1;
   min-width: 18.75rem;
   max-width: 27.1875rem;
   border-radius: 3.125rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: auto;
 }
 
 .contacts {
@@ -952,6 +953,9 @@ footer .flex {
 }
 .contacts .title {
   margin-top: 0;
+}
+.contacts .footer-address {
+  margin-top: 10px;
 }
 .contacts .flex {
   gap: 10px;
@@ -1203,7 +1207,13 @@ iframe {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 810px) {
+  footer .footer-big {
+    font-size: 16px;
+  }
+  footer .fs-200 {
+    font-size: var(--fs-100);
+  }
   footer .container {
     flex-direction: column;
     justify-content: flex-start;

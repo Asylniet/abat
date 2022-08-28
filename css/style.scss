@@ -233,7 +233,7 @@ section.container {
 }
 
 .address {
-  max-width: 59ch;
+  max-width: 66ch;
   min-width: 300px;
   gap: 0.625rem; // 10px
 }
@@ -554,7 +554,6 @@ nav {
     }
   }
 }
-
 
 .swiper-staff {
   height: 300px;
@@ -883,12 +882,12 @@ footer {
     box-shadow: 0 5px 10px var(--clr-primary-300);
   }
   .flex.wrap {
-    gap: 1.25rem;
+    gap: 1.5rem;
     .flex.column {
       min-width: 300px;
       max-width: 350px;
       flex: 1;
-      gap: 15px;
+      gap: 10px;
       text-align: center;
     }
   }
@@ -897,7 +896,7 @@ footer {
   }
 }
 
-.dsrk-staff,
+.dark-staff,
 .projects-footer {
   background: var(--clr-accent-800);
   color: var(--clr-neutral-400);
@@ -965,11 +964,12 @@ footer {
     clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
   img {
-    flex: 1;
+    flex: 1, 1;
     min-width: 18.75rem;
     max-width: 27.1875rem;
     border-radius: 3.125rem;
-    object-fit: cover;
+    object-fit: contain;
+    height: auto;
   }
 }
 
@@ -981,6 +981,9 @@ footer {
   }
   .title {
     margin-top: 0;
+  }
+  .footer-address {
+    margin-top: 10px;
   }
   .flex {
     gap: 10px;
@@ -1243,7 +1246,15 @@ iframe {
   }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 810px) {
+  footer {
+    .footer-big {
+      font-size: 16px;
+    }
+    .fs-200 {
+      font-size: var(--fs-100);
+    }
+  }
   footer .container {
     flex-direction: column;
     justify-content: flex-start;
