@@ -850,7 +850,7 @@ footer .flex {
   box-shadow: 0 5px 10px var(--clr-primary-300);
 }
 .dark-staff .flex.wrap {
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 .dark-staff .flex.wrap .flex.column {
   min-width: 300px;
@@ -1242,6 +1242,9 @@ iframe {
 @media screen and (max-width: 711px) {
   .empty {
     display: none;
+  }
+  .dark-staff .flex.wrap {
+    gap: 3rem;
   }
 }
 @media screen and (max-width: 600px) {

@@ -6,29 +6,29 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <footer class="flex">
-      <div class="container flex spb start wrap">
+      <div class="container flex spb start wrap fs-200">
         <div class="flex column start">
-          <a href="#">О компании</a>
-          <a href="#">Услуги</a>
-          <a href="#">Команда</a>
-          <a href="#">Сертификаты</a>
-          <a href="#">Проекты</a>
-          <a href="#">Клиенты</a>
-          <a href="#">Контакты</a>
+          <a href="/">О компании</a>
+          <a href="/pages/services.html">Услуги</a>
+          <a href="/pages/staff.html">Команда</a>
+          <a href="/pages/sertificate.html">Сертификаты</a>
+          <a href="/pages/projects.html">Проекты</a>
+          <a href="/pages/clients.html">Клиенты</a>
+          <a href="/pages/contacts.html">Контакты</a>
         </div>
         <div class="flex column start footer-address">
-          <div class="fs-200 footer-big">Адреса</div>
+          <div class="footer-big">Адреса</div>
           <div class="flex address start">
             <img src="/assets/icons/place-white.svg" alt="Адрес" />
-            <div class="fs-200">
+            <div>
               130000, Республика Казахстан, Мангистауская область г. Актау 3Б
               микрорайон, БЦ «Хаким» здание 30, 2 этаж, офис 201
             </div>
           </div>
         </div>
         <div class="flex column start">
-          <div class="fs-200 footer-big">Контакты</div>
-          <a class="flex fs-200" href="mailto: info@abat-tesc.kz">
+          <div class="footer-big">Контакты</div>
+          <a class="flex" href="mailto: info@abat-tesc.kz">
             <svg
               width="20"
               height="20"
@@ -43,7 +43,7 @@ class Footer extends HTMLElement {
             </svg>
             <span> info@abat-tesc.kz </span>
           </a>
-          <a class="flex tel fs-200" href="tel:+7 771 100 55 77">
+          <a class="flex tel" href="tel:+7 771 100 55 77">
             <svg
               width="35"
               height="35"
@@ -58,7 +58,7 @@ class Footer extends HTMLElement {
             </svg>
             <span> +7 771 100 55 77 </span>
           </a>
-          <a class="flex tel fs-200" href="tel:+7 771 100 55 66">
+          <a class="flex tel" href="tel:+7 771 100 55 66">
             <svg
               width="35"
               height="35"
