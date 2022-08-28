@@ -30,11 +30,12 @@ projects.forEach((element) => {
   });
 });
 
-const swiper = new Swiper(".swiper-project", {
+const swiperProject = new Swiper(".swiper-project", {
     // Optional parameters
     direction: "horizontal",
     loop: true,
     slidesPerView: 1,
+    spaceBetween: 10,
   
     // If we need pagination
     pagination: {
