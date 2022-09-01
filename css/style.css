@@ -546,10 +546,26 @@ nav ul a.selected {
   transform: translate(-50%, -30%) rotate(180deg);
 }
 
+.clients:not(.swiper) {
+  position: relative;
+  gap: 2.7rem;
+}
+.clients:not(.swiper)::after {
+  content: "";
+  position: absolute;
+  width: 55px;
+  aspect-ratio: 55/111;
+  top: 10%;
+  left: 0;
+  background: url("/assets/images/bg-clients-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .swiper.clients {
   width: 100%;
-  height: 200px;
-  padding-bottom: 70px;
+  background: var(--clr-neutral-400);
+  max-height: 200px;
 }
 .swiper.clients .swiper-slide {
   display: flex;
@@ -557,11 +573,12 @@ nav ul a.selected {
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: 0;
+  margin: auto 0;
   height: 100%;
 }
 .swiper.clients img {
   width: auto;
+  height: 100%;
 }
 
 .pros {
@@ -616,7 +633,6 @@ nav ul a.selected {
 }
 
 .staff {
-  padding: 2.5rem 0 8.75rem 0;
   gap: 2.5rem;
 }
 .staff img {
@@ -629,7 +645,15 @@ nav ul a.selected {
   gap: 5rem;
 }
 .staff .flex.column {
+  color: var(--clr-neutral-400);
   text-align: center;
+}
+.staff.mainPage {
+  padding: 4.375rem 0;
+}
+
+.mainPage .flex.column {
+  color: var(--clr-accent-1000);
 }
 
 footer {
@@ -663,9 +687,6 @@ footer .flex {
   gap: 0.625rem;
 }
 
-.services {
-  margin-bottom: 2.5rem;
-}
 .services .flex.wrap {
   margin: 40px 0;
 }
@@ -677,7 +698,7 @@ footer .flex {
   width: clamp(300px, 100%, 500px);
   padding: 30px 50px;
   border-radius: 20px;
-  border: 1px solid var(--clr-neutral-200);
+  background: var(--clr-neutral-400);
 }
 .box img {
   width: 70px;
@@ -693,33 +714,6 @@ footer .flex {
   max-width: 30ch;
 }
 
-.clients:not(.swiper) {
-  position: relative;
-  gap: 2.7rem;
-}
-.clients:not(.swiper)::after {
-  content: "";
-  position: absolute;
-  width: 3%;
-  aspect-ratio: 80/86;
-  bottom: 0;
-  right: 0;
-  background: url("/assets/images/bg-clients-bottom.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.clients:not(.swiper)::before {
-  content: "";
-  position: absolute;
-  width: 3%;
-  aspect-ratio: 55/111;
-  top: 5%;
-  left: 0;
-  background: url("/assets/images/bg-clients-top.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 .button {
   font-weight: var(--fw-bold);
   text-decoration: none;
@@ -733,6 +727,32 @@ footer .flex {
 }
 .button:hover {
   box-shadow: 0 5px 10px var(--clr-primary-100);
+}
+
+.button.presentation {
+  color: var(--clr-neutral-400);
+  background: none;
+  border: 1px solid var(--clr-neutral-400);
+  transition: 0.2s ease;
+}
+.button.presentation svg path {
+  fill: var(--clr-neutral-400);
+}
+.button.presentation:hover {
+  background: var(--clr-neutral-400);
+  color: var(--clr-accent-1000);
+  box-shadow: 0 5px 10px var(--clr-neutral-200);
+}
+.button.presentation:hover svg path {
+  fill: var(--clr-accent-1000);
+}
+
+.button.white {
+  background: var(--clr-neutral-400);
+  color: var(--clr-accent-1000);
+}
+.button.white:hover {
+  box-shadow: 0 5px 10px var(--clr-neutral-300);
 }
 
 .back-section {
@@ -904,14 +924,30 @@ footer .flex {
   background-size: cover;
 }
 
-.sertificates {
+.bg-holder {
+  background: var(--clr-primary-500);
+  width: 100%;
+  padding: 8.75rem 0 4.375rem 0;
+  -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+          clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.staff:not(.mainPage),
+.sertificates,
+.services {
   position: relative;
 }
-.sertificates::after, .sertificates::before {
+.staff:not(.mainPage)::after, .staff:not(.mainPage)::before,
+.sertificates::after,
+.sertificates::before,
+.services::after,
+.services::before {
   content: "";
   position: absolute;
 }
-.sertificates::after {
+.staff:not(.mainPage)::after,
+.sertificates::after,
+.services::after {
   width: 8%;
   aspect-ratio: 271/236;
   bottom: 0;
@@ -920,7 +956,9 @@ footer .flex {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.sertificates::before {
+.staff:not(.mainPage)::before,
+.sertificates::before,
+.services::before {
   width: 8%;
   aspect-ratio: 1/1;
   top: 0;
@@ -929,24 +967,28 @@ footer .flex {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .sertificates .container {
   gap: 20px;
 }
-.sertificates .flex:not(.container) {
-  background: var(--clr-primary-500);
-  width: 100%;
-  padding: 8.75rem 0 4.375rem 0;
-  -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
-}
-.sertificates img {
+.sertificates .sertificate-image-wrapper {
   flex: 1, 1;
   min-width: 18.75rem;
   max-width: 27.1875rem;
   border-radius: 3.125rem;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.sertificates .sertificate-image-wrapper:hover {
+  transition-delay: 0s !important;
+  transform: scale(1.05) !important;
+}
+.sertificates img {
+  width: 100%;
+  height: auto;
+  border-radius: 3.125rem;
   -o-object-fit: contain;
      object-fit: contain;
-  height: auto;
 }
 
 .contacts {
@@ -996,17 +1038,26 @@ iframe {
   min-height: 300px;
 }
 
-.projects .flex.wrap:not(.container) {
-  width: 100%;
+.allProjects .flex.wrap.container {
+  color: var(--clr-neutral-400);
+}
+
+.projects .flex.wrap.container {
   position: relative;
   gap: 2.5rem;
-  padding: 70px 0;
 }
 .projects .flag {
   width: 85px;
   border-radius: 0;
   margin-right: 20px;
   height: auto;
+}
+.projects .projects-bg-holder {
+  background: var(--clr-primary-500);
+  width: 100%;
+  padding: 8.75rem 0 4.375rem 0;
+  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
+          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
 .project-container {
@@ -1081,6 +1132,12 @@ iframe {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.contacts.allProjects::before,
+.projects.allProjects::before {
+  z-index: 1;
+  opacity: 0.2;
+  pointer-events: none;
+}
 
 .projects::after {
   width: 4%;
@@ -1118,6 +1175,11 @@ iframe {
 @media screen and (max-width: 1320px) {
   html {
     font-size: 12px;
+  }
+  .services .bg-holder,
+.projects .projects-bg-holder {
+    -webkit-clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
 @media screen and (max-width: 1125px) {
@@ -1204,7 +1266,8 @@ iframe {
   }
 }
 @media screen and (max-width: 795px) {
-  .sertificates .flex:not(.container) {
+  .staff .bg-holder,
+.sertificates .bg-holder {
     -webkit-clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
             clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
   }

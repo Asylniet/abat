@@ -25,27 +25,29 @@ projects.forEach((element) => {
     swiper.autoplay.start();
   });
   element.addEventListener("mouseleave", () => {
-    swiper.autoplay.stop();
     swiper.slideTo(1, 700, false);
+    swiper.autoplay.stop();
   });
 });
 
 const swiperProject = new Swiper(".swiper-project", {
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 10,
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
   
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-next-button",
-      prevEl: ".swiper-prev-button",
-    },
-  });
+  // If we need pagination
+  pagination: {
+    dynamicBullets: true,
+    dynamicMainBullets: 4,
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-next-button",
+    prevEl: ".swiper-prev-button",
+  },
+});
