@@ -11,8 +11,13 @@
   --clr-primary-300: #633adc;
   --clr-primary-100: #b7a2f6;
 
+  --shw-primary-100: rgba(183, 162, 246, 0.9);
+  --shw-primary-400: rgba(53, 0, 212, 0.2);
+  --shw-neutral-400: rgba(255, 255, 255, 0.2);
+
   // Header and footer, additional color to primary
   --clr-accent-1000: #000000;
+  --clr-accent-950: #040011;
   --clr-accent-900: #08001f;
   --clr-accent-800: #282828;
   --clr-accent-500: #4a4a4a;
@@ -586,11 +591,13 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .bg-holder {
+    padding-bottom: 6.25rem;
+  }
 }
 
 .swiper.clients {
   width: 100%;
-  // margin-bottom: 70px;
   background: var(--clr-neutral-400);
   max-height: 200px;
   .swiper-slide {
@@ -659,7 +666,11 @@ nav {
 }
 
 .staff {
+  transform: translateY(1px);
   gap: 2.5rem;
+  .bg-holder {
+    padding-bottom: 7.875rem;
+  }
   img {
     width: 200px;
     height: 200px;
@@ -684,7 +695,7 @@ nav {
 
 footer {
   width: 100%;
-  background: var(--clr-accent-900);
+  background: var(--clr-accent-950);
   padding: 4.375rem 0; // 70px
   &,
   a {
@@ -710,6 +721,10 @@ footer {
   }
   .flex {
     gap: 0.625rem; // 10px
+  }
+  .footer-address {
+    max-width: 52ch;
+    margin-left: 3rem;
   }
 }
 
@@ -738,7 +753,7 @@ footer {
     display: block;
   }
   .fw-medium.fs-300 {
-    max-width: 30ch;
+    max-width: 29ch;
   }
 }
 
@@ -753,7 +768,7 @@ footer {
   gap: 0.625rem !important;
   transition: 0.2s ease;
   &:hover {
-    box-shadow: 0 5px 10px var(--clr-primary-100);
+    box-shadow: 0 5px 5px var(--shw-primary-100);
   }
 }
 
@@ -768,7 +783,7 @@ footer {
   &:hover {
     background: var(--clr-neutral-400);
     color: var(--clr-accent-1000);
-    box-shadow: 0 5px 10px var(--clr-neutral-200);
+    box-shadow: 0 5px 5px var(--shw-neutral-400);
     svg path {
       fill: var(--clr-accent-1000);
     }
@@ -779,7 +794,7 @@ footer {
   background: var(--clr-neutral-400);
   color: var(--clr-accent-1000);
   &:hover {
-    box-shadow: 0 5px 10px var(--clr-neutral-300);
+    box-shadow: 0 5px 5px var(--shw-neutral-400);
   }
 }
 
@@ -809,6 +824,11 @@ footer {
     }
     .flex-4 {
       flex: 4;
+    }
+  }
+  .fw-light.start {
+    div {
+      min-width: 140px;
     }
   }
   img {
@@ -863,16 +883,17 @@ footer {
   ul {
     list-style: none; /* Remove default bullets */
     li {
+      padding-left: 15px;
       margin: 15px 0;
       max-width: 51ch;
       ul li {
         color: var(--clr-accent-400);
         font-weight: var(--fw-light);
         &::before {
-          content: "\2022";
-          color: var(--clr-accent-1000);
-          background: none;
-          margin-left: 30px;
+          width: 7px;
+          height: 7px;
+          background: var(--clr-accent-1000);
+          top: calc(1rem + 0.1875rem);
         }
       }
     }
@@ -882,12 +903,15 @@ footer {
     content: "";
     width: 10px;
     height: 10px;
+    position: relative;
+    top: calc(1rem + 0.3125rem);
+    left: -15px;
     border-radius: 50%; /* Add content: \2022 is the CSS Code/unicode for a bullet */
     background: var(--clr-primary-400); /* Change the color */
     // font-weight: var(--fw-bold); /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
+    display: block; /* Needed to add space between the bullet and the text */
     // width: 1rem; /* Also needed for space (tweak if needed) */
-    margin-right: 10px; /* Also needed for space (tweak if needed) */
+    // margin-right: 10px; /* Also needed for space (tweak if needed) */
   }
   .about,
   .additional-info {
@@ -905,7 +929,7 @@ footer {
 .dark-staff {
   gap: 1.5rem;
   .button:hover {
-    box-shadow: 0 5px 10px var(--clr-primary-300);
+    box-shadow: 0 5px 5px var(--shw-primary-400);
   }
   .flex.wrap {
     gap: 1.25rem;
@@ -1004,7 +1028,24 @@ footer {
     border-radius: 3.125rem;
     transition: 0.2s ease;
     cursor: pointer;
-    &:hover {
+    &.inView {
+      transition: 0.5s ease;
+      @include flex();
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      max-width: none;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 0;
+      z-index: 2;
+      padding: 10px;
+      img {
+        max-width: 37.5rem;
+      }
+    }
+    &:not(.inView):hover {
       transition-delay: 0s !important;
       transform: scale(1.05) !important;
     }
@@ -1014,6 +1055,24 @@ footer {
     height: auto;
     border-radius: 3.125rem;
     object-fit: contain;
+  }
+  .sertificate-bg-holder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 8.75rem 0 4.375rem 0;
+    &::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--clr-primary-500);
+      clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
   }
 }
 
@@ -1107,15 +1166,15 @@ iframe {
 .swiper-projects {
   width: 100% !important;
   height: 270px;
-  border-radius: 1.25rem;
   cursor: pointer;
   .swiper-slide {
+    border-radius: 1.25rem;
     width: 100% !important;
   }
   img {
-    border-radius: 1.25rem;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 5px);
+    transform: translate(0, -1px);
     object-fit: cover;
   }
 }
@@ -1296,6 +1355,9 @@ iframe {
       }
     }
   }
+  .sertificates .sertificate-bg-holder::before {
+    clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
 }
 
 @media screen and (max-width: 795px) {
@@ -1308,6 +1370,10 @@ iframe {
   .sertificates .container {
     flex-direction: column;
   }
+  .main-info .fw-light.start {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 @media screen and (max-width: 810px) {
@@ -1318,14 +1384,14 @@ iframe {
     .fs-200 {
       font-size: var(--fs-100);
     }
-  }
-  footer .container {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  .footer-address {
-    justify-self: flex-end;
+    .footer-address {
+      margin-left: 0;
+    }
+    .container {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+    }
   }
   .pros {
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
