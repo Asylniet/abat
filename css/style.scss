@@ -826,7 +826,7 @@ footer {
       flex: 4;
     }
   }
-  .fw-light.start {
+  .fw-light.start, .fw-medium.start {
     div {
       min-width: 140px;
     }
@@ -912,6 +912,10 @@ footer {
     display: block; /* Needed to add space between the bullet and the text */
     // width: 1rem; /* Also needed for space (tweak if needed) */
     // margin-right: 10px; /* Also needed for space (tweak if needed) */
+  }
+
+  .about {
+    align-items: stretch;
   }
   .about,
   .additional-info {
@@ -1370,9 +1374,8 @@ iframe {
   .sertificates .container {
     flex-direction: column;
   }
-  .main-info .fw-light.start {
+  .main-projects .fw-light.start {
     flex-direction: column;
-    gap: 10px;
   }
 }
 

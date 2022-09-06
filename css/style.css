@@ -796,7 +796,7 @@ footer .footer-address {
 .main-info .flex.column .flex-4 {
   flex: 4;
 }
-.main-info .fw-light.start div {
+.main-info .fw-light.start div, .main-info .fw-medium.start div {
   min-width: 140px;
 }
 .main-info img {
@@ -872,6 +872,9 @@ footer .footer-address {
   border-radius: 50%; /* Add content: \2022 is the CSS Code/unicode for a bullet */
   background: var(--clr-primary-400); /* Change the color */
   display: block; /* Needed to add space between the bullet and the text */
+}
+.info-section .about {
+  align-items: stretch;
 }
 .info-section .about,
 .info-section .additional-info {
@@ -1338,9 +1341,8 @@ iframe {
   .sertificates .container {
     flex-direction: column;
   }
-  .main-info .fw-light.start {
+  .main-projects .fw-light.start {
     flex-direction: column;
-    gap: 10px;
   }
 }
 @media screen and (max-width: 810px) {
