@@ -140,6 +140,10 @@
   font-weight: var(--fw-medium);
 }
 
+.mt70 {
+  margin-top: 4.375rem;
+}
+
 //Reseting
 // Box sizing rules
 *,
@@ -351,6 +355,16 @@ nav {
 
 .title.single {
   margin: 0 0 2.5rem 0;
+}
+
+.title:not(.single).white {
+  color: var(--clr-neutral-400);
+  &::after {
+    background-image: url("/assets/icons/fourth-ellipce-white2.svg");
+  }
+  &::before {
+    background-image: url("/assets/icons/fourth-ellipce-white.svg");
+  }
 }
 
 .title::after,
@@ -754,6 +768,7 @@ footer {
   }
   .fw-medium.fs-300 {
     max-width: 29ch;
+    color: var(--clr-accent-1000);
   }
 }
 
@@ -805,6 +820,9 @@ footer {
 .main-info {
   padding-bottom: 8.75rem;
   gap: 10px;
+  &.servicePage {
+    padding-bottom: calc(5.3125rem - 40px);
+  }
   .flex.column.flex-4:first-child {
     flex: 3;
   }
@@ -826,7 +844,8 @@ footer {
       flex: 4;
     }
   }
-  .fw-light.start, .fw-medium.start {
+  .fw-light.start,
+  .fw-medium.start {
     div {
       min-width: 140px;
     }
@@ -858,28 +877,29 @@ footer {
   }
 }
 
+.gradient-line {
+  position: relative;
+  margin-bottom: 3rem;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 20.625rem;
+    height: 0.625rem;
+    border-radius: 1.25rem;
+    background: linear-gradient(
+      90deg,
+      var(--clr-primary-300) 4.53%,
+      var(--clr-primary-100) 97.28%
+    );
+  }
+}
+
 .info-section {
   width: 100%;
   align-items: flex-start;
   justify-content: flex-start;
-  .gradient-line {
-    position: relative;
-    margin-bottom: 3rem;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -1.5rem;
-      left: 0;
-      width: 20.625rem;
-      height: 0.625rem;
-      border-radius: 1.25rem;
-      background: linear-gradient(
-        90deg,
-        var(--clr-primary-300) 4.53%,
-        var(--clr-primary-100) 97.28%
-      );
-    }
-  }
   ul {
     list-style: none; /* Remove default bullets */
     li {
@@ -1057,14 +1077,14 @@ footer {
   img {
     width: 100%;
     height: auto;
-    border-radius: 3.125rem;
+    border-radius: 1.25rem;
     object-fit: contain;
   }
   .sertificate-bg-holder {
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 8.75rem 0 4.375rem 0;
+    padding: 8.75rem 0;
     &::before {
       content: "";
       box-sizing: border-box;
@@ -1074,8 +1094,12 @@ footer {
       left: 0;
       right: 0;
       bottom: 0;
-      background: var(--clr-primary-500);
-      clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+      background: radial-gradient(
+        54.96% 54.96% at 50% 54.66%,
+        #5f2bf3 0%,
+        #3f1ba8 100%
+      );
+      clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
     }
   }
 }
@@ -1241,6 +1265,83 @@ iframe {
   &::before {
     width: 6%;
     top: 60%;
+  }
+}
+
+.service-bg-holder {
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+  }
+  &::after {
+    max-width: 110px;
+    width: 5%;
+    aspect-ratio: 55/111;
+    top: 170px;
+    left: 0;
+    background: url("/assets/images/bg-clients-top.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &::before {
+    width: 4%;
+    aspect-ratio: 124/236;
+    top: 240px;
+    min-width: 60px;
+    right: 0;
+    background: url("/assets/images/bg-contacts-top.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.main-content {
+  max-width: 137ch;
+  margin-top: 1rem;
+  .gradient-line {
+    margin-bottom: 60px;
+    gap: 20px;
+    &.fl-start {
+      justify-content: flex-start;
+      align-items: flex-start;
+      .image {
+        margin-top: 10px;
+      }
+    }
+    &::after {
+      width: 100%;
+    }
+    .image {
+      width: 50px;
+      height: 50px;
+      background: var(--clr-primary-300);
+      border-radius: 50%;
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        border-radius: 0;
+      }
+    }
+  }
+  .flex.fs-700.fw-medium {
+    gap: 10px;
+  }
+  .fs-300 {
+    .color {
+      color: #6750A9;
+    }
+    .fs-500 {
+      margin-bottom: 1rem;
+    }
+    div {
+      margin-bottom: 40px;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
   }
 }
 

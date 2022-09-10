@@ -118,6 +118,10 @@
   font-weight: var(--fw-medium);
 }
 
+.mt70 {
+  margin-top: 4.375rem;
+}
+
 *,
 *::before,
 *::after {
@@ -328,6 +332,16 @@ nav ul a.selected {
 
 .title.single {
   margin: 0 0 2.5rem 0;
+}
+
+.title:not(.single).white {
+  color: var(--clr-neutral-400);
+}
+.title:not(.single).white::after {
+  background-image: url("/assets/icons/fourth-ellipce-white2.svg");
+}
+.title:not(.single).white::before {
+  background-image: url("/assets/icons/fourth-ellipce-white.svg");
 }
 
 .title::after,
@@ -726,6 +740,7 @@ footer .footer-address {
 }
 .box .fw-medium.fs-300 {
   max-width: 29ch;
+  color: var(--clr-accent-1000);
 }
 
 .button {
@@ -777,6 +792,9 @@ footer .footer-address {
   padding-bottom: 8.75rem;
   gap: 10px;
 }
+.main-info.servicePage {
+  padding-bottom: calc(5.3125rem - 40px);
+}
 .main-info .flex.column.flex-4:first-child {
   flex: 3;
 }
@@ -796,7 +814,8 @@ footer .footer-address {
 .main-info .flex.column .flex-4 {
   flex: 4;
 }
-.main-info .fw-light.start div, .main-info .fw-medium.start div {
+.main-info .fw-light.start div,
+.main-info .fw-medium.start div {
   min-width: 140px;
 }
 .main-info img {
@@ -825,16 +844,11 @@ footer .footer-address {
   background: var(--clr-neutral-200);
 }
 
-.info-section {
-  width: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.info-section .gradient-line {
+.gradient-line {
   position: relative;
   margin-bottom: 3rem;
 }
-.info-section .gradient-line::after {
+.gradient-line::after {
   content: "";
   position: absolute;
   bottom: -1.5rem;
@@ -843,6 +857,12 @@ footer .footer-address {
   height: 0.625rem;
   border-radius: 1.25rem;
   background: linear-gradient(90deg, var(--clr-primary-300) 4.53%, var(--clr-primary-100) 97.28%);
+}
+
+.info-section {
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .info-section ul {
   list-style: none; /* Remove default bullets */
@@ -1030,7 +1050,7 @@ footer .footer-address {
 .sertificates img {
   width: 100%;
   height: auto;
-  border-radius: 3.125rem;
+  border-radius: 1.25rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -1038,7 +1058,7 @@ footer .footer-address {
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 8.75rem 0 4.375rem 0;
+  padding: 8.75rem 0;
 }
 .sertificates .sertificate-bg-holder::before {
   content: "";
@@ -1049,9 +1069,9 @@ footer .footer-address {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--clr-primary-500);
-  -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background: radial-gradient(54.96% 54.96% at 50% 54.66%, #5f2bf3 0%, #3f1ba8 100%);
+  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
+          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
 .contacts {
@@ -1214,6 +1234,80 @@ iframe {
 .projects::before {
   width: 6%;
   top: 60%;
+}
+
+.service-bg-holder {
+  position: relative;
+}
+.service-bg-holder::after, .service-bg-holder::before {
+  content: "";
+  position: absolute;
+}
+.service-bg-holder::after {
+  max-width: 110px;
+  width: 5%;
+  aspect-ratio: 55/111;
+  top: 170px;
+  left: 0;
+  background: url("/assets/images/bg-clients-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.service-bg-holder::before {
+  width: 4%;
+  aspect-ratio: 124/236;
+  top: 240px;
+  min-width: 60px;
+  right: 0;
+  background: url("/assets/images/bg-contacts-top.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-content {
+  max-width: 137ch;
+  margin-top: 1rem;
+}
+.main-content .gradient-line {
+  margin-bottom: 60px;
+  gap: 20px;
+}
+.main-content .gradient-line.fl-start {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.main-content .gradient-line.fl-start .image {
+  margin-top: 10px;
+}
+.main-content .gradient-line::after {
+  width: 100%;
+}
+.main-content .gradient-line .image {
+  width: 50px;
+  height: 50px;
+  background: var(--clr-primary-300);
+  border-radius: 50%;
+}
+.main-content .gradient-line .image img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  border-radius: 0;
+}
+.main-content .flex.fs-700.fw-medium {
+  gap: 10px;
+}
+.main-content .fs-300 .color {
+  color: #6750A9;
+}
+.main-content .fs-300 .fs-500 {
+  margin-bottom: 1rem;
+}
+.main-content .fs-300 div {
+  margin-bottom: 40px;
+}
+.main-content .fs-300 ul, .main-content .fs-300 ol {
+  padding-left: 20px;
 }
 
 @media screen and (min-width: 1400px) {
