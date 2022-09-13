@@ -175,7 +175,6 @@ a {
 img,
 picture,
 svg {
-  max-width: 100%;
   display: block;
 }
 
@@ -291,6 +290,10 @@ nav ul a.selected {
 .dark-staff .fw-bold,
 .projects-footer {
   font-family: var(--ff-secondary);
+}
+
+#spectr {
+  display: none;
 }
 
 .hero {
@@ -537,7 +540,7 @@ nav ul a.selected {
 }
 .swiper-project .swiper-slide {
   width: 100% !important;
-  height: calc(100% - 60px);
+  height: calc(100% - 70px);
   transition: 0.2s ease;
 }
 .swiper-project .swiper-slide img {
@@ -645,11 +648,11 @@ nav ul a.selected {
   min-width: 18.75rem;
   gap: 0.625rem;
 }
-.pros .flex.column.start:not(.container) .fs-300 {
+.pros .flex.column.start:not(.container) .fs-200 {
   color: var(--clr-neutral-300);
 }
 .pros img {
-  width: clamp(70px, 25%, 110px);
+  height: clamp(70px, 25%, 110px);
 }
 
 .staff {
@@ -673,7 +676,7 @@ nav ul a.selected {
   text-align: center;
 }
 .staff.mainPage {
-  padding: 4.375rem 0;
+  padding: 4.375rem 0 8.125rem;
 }
 
 .mainPage .flex.column {
@@ -824,13 +827,18 @@ footer .footer-address {
   border-radius: 50%;
 }
 .main-info .fs-100:not(.fw-light) {
-  padding: 0.625rem 0;
+  padding: 0.625rem 1.25rem;
+  position: relative;
 }
 .main-info .fs-100:not(.fw-light)::before {
-  content: "-";
-  display: inline-block;
-  margin-right: 10px;
-  font-size: var(--fs-100);
+  content: "";
+  display: block;
+  width: 10px;
+  position: absolute;
+  top: 1.3rem;
+  left: -5px;
+  background: var(--clr-accent-1000);
+  height: 1px;
 }
 
 .back-button {
@@ -968,11 +976,22 @@ footer .footer-address {
 }
 
 .bg-holder {
+  position: relative;
   background: var(--clr-primary-500);
   width: 100%;
   padding: 8.75rem 0 4.375rem 0;
-  -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.bg-holder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -1px);
+  width: 100%;
+  height: 15.625rem;
+  background: var(--clr-neutral-400);
+  -webkit-clip-path: polygon(50% 20%, 0 0, 100% 0);
+          clip-path: polygon(50% 20%, 0 0, 100% 0);
 }
 
 .staff:not(.mainPage),
@@ -1070,8 +1089,18 @@ footer .footer-address {
   right: 0;
   bottom: 0;
   background: radial-gradient(54.96% 54.96% at 50% 54.66%, #5f2bf3 0%, #3f1ba8 100%);
-  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.sertificates .sertificate-bg-holder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -1px);
+  width: 100%;
+  height: 15.625rem;
+  background: var(--clr-neutral-400);
+  -webkit-clip-path: polygon(50% 20%, 0 0, 100% 0);
+          clip-path: polygon(50% 20%, 0 0, 100% 0);
 }
 
 .contacts {
@@ -1139,8 +1168,20 @@ iframe {
   background: var(--clr-primary-500);
   width: 100%;
   padding: 8.75rem 0 4.375rem 0;
-  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
+  position: relative;
+}
+.projects .projects-bg-holder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -1px);
+  width: 100%;
+  height: 15.625rem;
+  background: var(--clr-neutral-400);
+  -webkit-clip-path: polygon(50% 20%, 0 0, 100% 0);
+          clip-path: polygon(50% 20%, 0 0, 100% 0);
+  border: none;
 }
 
 .project-container {
@@ -1283,10 +1324,12 @@ iframe {
   width: 100%;
 }
 .main-content .gradient-line .image {
+  min-width: 50px;
   width: 50px;
   height: 50px;
   background: var(--clr-primary-300);
   border-radius: 50%;
+  flex: 1 0;
 }
 .main-content .gradient-line .image img {
   width: 30px;
@@ -1298,7 +1341,7 @@ iframe {
   gap: 10px;
 }
 .main-content .fs-300 .color {
-  color: #6750A9;
+  color: #6750a9;
 }
 .main-content .fs-300 .fs-500 {
   margin-bottom: 1rem;
@@ -1306,7 +1349,8 @@ iframe {
 .main-content .fs-300 div {
   margin-bottom: 40px;
 }
-.main-content .fs-300 ul, .main-content .fs-300 ol {
+.main-content .fs-300 ul,
+.main-content .fs-300 ol {
   padding-left: 20px;
 }
 
@@ -1332,11 +1376,6 @@ iframe {
 @media screen and (max-width: 1320px) {
   html {
     font-size: 12px;
-  }
-  .services .bg-holder,
-.projects .projects-bg-holder {
-    -webkit-clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
-            clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
 @media screen and (max-width: 1125px) {
@@ -1365,7 +1404,7 @@ iframe {
   header.opened .hamburger span:first-child {
     opacity: 1;
     transform: rotate(45deg);
-    top: calc(50% + 2px);
+    top: calc(50% + 4px);
   }
   header.opened .hamburger span:last-child {
     opacity: 1;
@@ -1377,6 +1416,9 @@ iframe {
     justify-content: flex-start !important;
     align-items: flex-start;
     padding-bottom: 20px;
+  }
+  .sub-header .address {
+    align-items: flex-start;
   }
   .sub-header .logo {
     position: absolute;
@@ -1421,21 +1463,18 @@ iframe {
   nav .container ul a {
     width: 100%;
   }
-  .sertificates .sertificate-bg-holder::before {
-    -webkit-clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
-            clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
-  }
 }
 @media screen and (max-width: 795px) {
-  .staff .bg-holder,
-.sertificates .bg-holder {
-    -webkit-clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
-            clip-path: polygon(50% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
+  .sertificates .sertificate-bg-holder::after .projects-bg-holder::after {
+    height: 9rem;
+  }
+  .bg-holder::after {
+    height: 9rem;
   }
   .sertificates .container {
     flex-direction: column;
   }
-  .main-projects .fw-light.start {
+  .main-info.projects .fw-light.start {
     flex-direction: column;
   }
 }
@@ -1495,10 +1534,16 @@ iframe {
   .fs-900 {
     font-size: 3rem;
   }
+  #spectr {
+    display: inline;
+  }
 }
 @media screen and (max-width: 430px) {
   .fs-800 {
     font-size: var(--fs-750);
+  }
+  .fs-700 {
+    font-size: var(--fs-600);
   }
   .hero .fs-900 {
     font-size: 2.5rem;
